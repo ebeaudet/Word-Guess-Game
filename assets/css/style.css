@@ -1,11 +1,23 @@
+body {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    font-size: 72pt;
+}
+
 h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     color:red;
-
 }
 
-#bordering {
-    border-image: url('https://i.pinimg.com/564x/14/89/2c/14892c9238960fd9ee2fff339b5dd376.jpg') 29 30 repeat;
-    border: 25px solid transparent;
+.container-columns {
+    width: 460px;
+    margin: 0 auto;
+}
+
+.gameDiv {
+    height:50px;
 }

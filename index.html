@@ -3,33 +3,53 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-    <link rel="javascript" type="text/javascript" href="assets/javascript/game.js" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 
 <body>
     <div class="container">
-        <header>Hangman Game</header>
-        <h1>Name That Band Edition</h1>
-    </div>
-    <div class="container ">
         <div class="row">
-            <div class="col-sm-6 border border-primary ">
-                <p>this is the left column </p>
-            </div>
-            <div class="col-sm-6 border border-secondary">
-                <p>PRESS ANY KEY TO GET THIS PARTY STARTED!!</p>
-                <P>PICK ANY LETTER TO GUESS THE BAND</P>    
-                <p>CURRENT WORD</p>
-                <p>_ _ _ _ _ _ _</p>
-                <p>NUMBER OF GUESSES REMAINING</p>
-                <p>LETTERS ALREADY GUESSED</p>
-            
+            <div class="col-md-12 d-flex justify-content-center">
+                <header>Hangman Game</header>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="d-flex justify-content-centejol-md-12">
+                <h1>Name That Band Edition</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-center col-md-12">
+                <p class="p-20">PRESS ANY KEY TO GET THIS PARTY STARTED!!</p>
+            </div>
+        </div>
+        <div class="container-columns">
+            <div class="row">
+                <div class="col-sm-4 border border-primary ">
+                    <p>this is the left column </p>
+                </div>
+                <div class="col-sm-8 border border-secondary">
+                    <div class="gameDiv">CURRENT WORD</div>
+                    <div>
+                        <p id="randomWord" class="underscore">  </p>
+                    </div>
+                    <div class="gameDiv">NUMBER OF GUESSES REMAINING</div>
+                    <div class="gameDiv">LETTERS ALREADY GUESSED</div>
+                    <div class="gameDiv">WINS: </div>
+                    <div class="gameDiv">Losses: </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
+
+<script src="assets/javascript/game.js">
+
+function myFunction(event) {
+    var x = event.key;
+   console.log=(document.getElementById("demo").innerHTML = "The pressed key was: " + x)
+}
+</script>
