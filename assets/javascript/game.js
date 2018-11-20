@@ -1,35 +1,64 @@
 var bands = ["BEATLES", "QUEEN", "FOREIGNER", "SUPERTRAMP", "EAGLES", "AEROSMITH", "JOURNEY", "BOSTON", "SANTANA", "HEART", "KANSAS"];
 var wins;
-var userguesses;
-var wrongGuesses = [];
 var numGuesses;
-var randBand = Math.floor(Math.random() * bands.length);
-var guessBand = bands[randBand];
+var userGuesses;
+var lettersGuessed;
+var currentWord = [];
 var underscores = [];
+var gameFinished = true;
+var gameStarted = false;
 
 
+var newGame = function () {
+    numGuesses = 10;
+    userGuesses = [];
+    gameFinished = false;
+    currentWord = Math.floor(Math.random() * (bands.length));
 
-document.onkeyup = function(event) {
-var newGame = function() {
-   
-        for (i = 0; i < guessBand.length; i++) {
-            underscores.push(' _ '); {
-                document.getElementById("randomWord").innerHTML = underscores;
-            }
+    for (var i = 0; i < bands[currentWord].length; i++) {
+        underscores.push(' _ '); {
+            document.getElementById("randomWord").innerHTML = underscores;
+            gameStarted = true;
+            console.log(underscores);
+            console.log(currentWord);
         }
     }
-
-var gamePlay = function() {
-    document.onkeyup = function (event) {
-        var lettersGuessed = event.keyCode; {
-            if (lettersGuessed.keyCode >= 65 && lettersGuessed.keyCode <= 90) {
-                console.log("lettersGuessed");
-            }
-        }
-    }
-    //decrease number of guesses
-
 }
-    //load number of wins
-    //letters already guessed
+
+function gamePlay() {
+    var correctLetters = [];
+  //check if user has guesses left
+    if (numGuesses > 0) {
+        if (lettersGuessed.indexof() === -1) {
+            correctLetters.push();
+        }
+    }
+
+    if(correctLetters.length <= 0) {
+        numGuesses--;
+    } else {
+        for (var i = 0; i < correctLetters.length; i++) {
+            currentWord[correctLetters[i]] = letter;
+        }
+    } 
+
+
+    for (var i = 0; i < bands[currentWord].length; i++) {
+        if (bands[currentWord][i] === lettersGuessed)
+            lettersGuessed.push(i);
+            console.log(currentWord);
+    }
+}
+
+
+//Start the game with keypress
+document.onkeypress = function (event) {
+    if (gameFinished) {
+        newGame();
+        gameFinished = false;
+    } else {
+        if (lettersGuessed >= 65 && lettersGuessed <= 122) {
+            gamePlay(event.key)
+        }
+    }
 };
